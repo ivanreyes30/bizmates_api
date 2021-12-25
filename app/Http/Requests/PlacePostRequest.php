@@ -29,7 +29,7 @@ class PlacePostRequest extends FormRequest
     {
         return [
             'near' => 'required|max:100',
-            'category' => 'required|max:100',
+            'categories' => 'required|max:100',
         ];
     }
 
@@ -38,8 +38,8 @@ class PlacePostRequest extends FormRequest
         return [
             'near.required' => 'Near is required',
             'near.max' => 'Maximum 100 characters only!',
-            'category.required' => 'Category is required',
-            'category.max' => 'Maximum 100 characters only for Category',
+            'categories.required' => 'Category is required',
+            'categories.max' => 'Maximum 100 characters only for Category',
         ];
     }
 

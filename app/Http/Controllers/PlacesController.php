@@ -77,6 +77,9 @@ class PlacesController extends Controller
                 case 400:
                     throw new Exception('Invalid Location.', $exception->getCode());
                     break;
+                case 404:
+                    throw new Exception('Location Not Found.', $exception->getCode());
+                    break;
                 default:
                     throw $exception;
             }
