@@ -48,7 +48,8 @@ class PlacePostRequest extends FormRequest
         $errors = (new ValidationException($validator))->errors();
 
         throw new HttpResponseException(
-            response()->json(['result' => false, 'errors' => $errors], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
+            // response()->json(['result' => false, 'message' => json_encode($errors)], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
+            response()->json(['result' => false, 'message' => 'Invalid Parameters.'], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
         );
     }
 }
